@@ -47,14 +47,17 @@ header > ul {
 	
 }   
 
-header > ul > li, header > ul > li > a{
+nav > ul > li, nav > ul > li > a{
 	display: flex;
 	flex-direction: column;
 	text-align:center;
 	vertical-align:middle;
 }   
+.breadcrumb li:not(:first-child)::before {
+  content: "→";
+}
 
-    header img {
+    nav img {
       max-width: 100px;
       width: 100%;
       height: auto;
@@ -69,7 +72,7 @@ header > ul > li, header > ul > li > a{
 <main itemscope itemtype="https://schema.org/Collection">
 
   <h1 itemprop="name">Captain Cookie Face Universe Theories</h1>
-<nav>
+<nav aria-label="Breadcrumb" class="breadcrumb">
    <ul>
 
     <li>
@@ -78,9 +81,6 @@ header > ul > li, header > ul > li > a{
 		  <span>Home</span>
       </a>      
     </li> 
-	<li>
-		<span>-></span>
-	</li>
 	<li>
       <img src="../assets/images/0DB0891F-5BB7-4D51-BF28-F67AF05197CE.png" alt="Avatar" >
       <span>Theories</span>
