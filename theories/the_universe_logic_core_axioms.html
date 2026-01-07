@@ -5,14 +5,14 @@
   <title>The Universe Logic — Core Axioms</title>
   <style>
     body {
-  font-family:
-    Arial,
-    "Helvetica Neue",
-    Helvetica,
-    system-ui,
-    sans-serif;
-    background: #fff;
-}
+      font-family:
+        Arial,
+        "Helvetica Neue",
+        Helvetica,
+        system-ui,
+        sans-serif;
+      background: #fff;
+    }
     .block {
       margin-bottom: 20px;
       padding: 15px;
@@ -22,10 +22,9 @@
     }
     .key {
       color: #000;
-      font-size:2em!important;
+      font-size: 2em !important;
       text-transform: capitalize;
       font-weight: bold;
-      
     }
     .hash {
       word-break: break-all;
@@ -38,50 +37,48 @@
     pre {
       white-space: pre-wrap;
     }
-
     button {
-  font-family: inherit;
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  background: #f9f9f9;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #eee;
-}
+      font-family: inherit;
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #eee;
+    }
   </style>
 </head>
 <body>
 
-  <article itemscope itemtype="https://schema.org/CreativeWork">
+<article itemscope itemtype="https://schema.org/CreativeWork">
 
   <meta itemprop="identifier" content="2512264119667">
-  <meta itemprop="dateCreated" content="2025-12-26">
+  <meta itemprop="dateCreated" content="12/26/2025">
 
-<h1>Captain Cookie Face Universe – The Universe Logic — Core Axioms</h1>
+  <h1>Captain Cookie Face Universe – The Universe Logic — Core Axioms</h1>
 
-<div class="block" id="rendered"></div>
+  <div class="block" id="rendered"></div>
 
-<div class="block">
-  <div class="key">SHA-256</div>
-
-  <div style="display:flex; gap:10px; align-items:center;">
-    <div class="hash" id="hashResult"></div>
-    <button id="copyHashBtn" type="button">Copy</button>
+  <div class="block">
+    <div class="key">SHA-256</div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <div class="hash" id="hashResult"></div>
+      <button id="copyHashBtn" type="button">Copy</button>
+    </div>
   </div>
-</div>
+
+</article>
 
 <script>
 (async () => {
 
-  // ===== SOURCE OBJECT =====
   const theory = {
-    id: "2512264119667",
-    safecreative_url: "https://www.safecreative.org/work/2512264119667-the-universe-logic-core-axioms",
-    title: "The Universe Logic — Core Axioms",
-    date: "12/26/2025",
-    text: `THE UNIVERSE LOGIC — CORE AXIOMS
+    "id": "2512264119667",
+    "safecreative_url": "https://www.safecreative.org/work/2512264119667-the-universe-logic-core-axioms",
+    "title": "The Universe Logic — Core Axioms",
+    "date": "12/26/2025",
+    "text": `THE UNIVERSE LOGIC — CORE AXIOMS
 
 WHO THIS IS FOR
 This document explains the Universe Logic.
@@ -151,11 +148,10 @@ ARTICLE X — FINAL AXIOM
 It responds only to structure.
 
 END OF DOCUMENT`,
-    nft_url: "https://og.rarible.com/token/polygon/0x35f8aee672cde8e5fd09c93d2bfe4ff5a9cf0756:54563394983082294023723203677514925242911692977273068555123379805042499387395",
-    tweet_url: ""
+    "nft_url": "https://og.rarible.com/token/polygon/0x35f8aee672cde8e5fd09c93d2bfe4ff5a9cf0756:54563394983082294023723203677514925242911692977273068555123379805042499387395",
+    "tweet_url": ""
   };
 
-  // ===== CANONICAL STRING (FOR HASH ONLY) =====
   const canonicalString = [
     theory.id,
     theory.safecreative_url,
@@ -166,7 +162,6 @@ END OF DOCUMENT`,
     theory.tweet_url
   ].join('\n---\n');
 
-  // ===== HASH =====
   const data = new TextEncoder().encode(canonicalString);
   const hashBuffer = await crypto.subtle.digest('SHA-256', data);
   const hashHex = [...new Uint8Array(hashBuffer)]
@@ -175,7 +170,6 @@ END OF DOCUMENT`,
 
   document.getElementById('hashResult').textContent = hashHex;
 
-  // ===== RENDER (DOES NOT AFFECT HASH) =====
   const container = document.getElementById('rendered');
 
   for (const [key, value] of Object.entries(theory)) {
@@ -202,17 +196,13 @@ END OF DOCUMENT`,
     container.appendChild(div);
   }
 
-
-  // ===== COPY HASH BUTTON =====
-document.getElementById('copyHashBtn').addEventListener('click', () => {
-  const hashText = document.getElementById('hashResult').textContent;
-  navigator.clipboard.writeText(hashText).then(() => {
+  document.getElementById('copyHashBtn').addEventListener('click', () => {
+    navigator.clipboard.writeText(hashHex);
     alert('Hash copied');
   });
-});
 
 })();
 </script>
-</article>
+
 </body>
 </html>
