@@ -50,6 +50,7 @@ nav > ul {
 nav > ul > li, nav > ul > li > a{
 	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
 	text-align:center;
 	margin: 0;
 }   
@@ -62,9 +63,9 @@ nav > ul > li, nav > ul > li > a{
     }
 
 	nav > li > .arrow {
-		display: table-cell;
-		vertical-align: middle;
-		position: relative;
+		display: flex;
+	    flex-wrap: wrap;
+	    flex-direction: row;
 		font-size: 38px;
 	}
   </style>
